@@ -29,6 +29,7 @@
     </div>
   </nav>
   <h2 class="text-center my-2">TO DO LIST</h2>
+  <p id="time" class="text-center"></p>
   <div class="container my-3">
     <div class="mb-3">
       <label for="title" class="form-label">Add a list item</label>
@@ -144,6 +145,12 @@
         update();
       }
     }
+    setInterval(() => {
+        let a= new Date();
+        time= "time"+":"+a.getHours()+":"+a.getMinutes()+":"+a.getSeconds();
+        date= "Date:"+a.getDate()+"/"+(a.getMonth()+1)+"/"+a.getFullYear();
+      document.getElementById("time").innerHTML=time+"<br>"+date;
+      }, 1000);
   </script>
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
